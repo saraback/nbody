@@ -1,6 +1,6 @@
 
-## nbody - Simulering av stjärnor i en galax
-# Att göra
+# nbody - Simulering av stjärnor i en galax
+## Att göra
 * Struct for stars
 * Initialize stars
 * Put stars in array
@@ -12,4 +12,4 @@
 		}}
 * update_array
 
-funkaaa!!!
+
