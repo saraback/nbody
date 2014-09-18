@@ -12,8 +12,4 @@
 		}}
 * update_array
 
-changed itttt
-
-
-
-you Bitch!!!!
+CHanged
