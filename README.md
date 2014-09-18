@@ -1,4 +1,4 @@
-
+kkokkkk
 # nbody - Simulering av stjärnor i en galax
 ## Att göra
 * Struct for stars
