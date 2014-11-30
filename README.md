@@ -1,16 +1,12 @@
-kkokkkk
-# nbody - Simulering av stjärnor i en galax
-## Att göra
-* Struct for stars
-* Initialize stars
-* Put stars in array
-* i, j - loopar : for star_in_array[i]
-		{for star_in_array[j]
-			{if i =! j
-				add vectors
-				and other information
-		}}
-* update_array
+#Nbody - Sara Back & Linnea Dahl
+##Building/running the program
 
-CHanged it again
-changed itttttttttttttttttttttttttt
+The program is run by writing 
+
+##Goals
+During this project, we have completed the following goal with use of the code written:
+
+J26, M36, R50, S51, S52, T53, T54, V56, W57, X62, X59
+
+##Possible expansions
+
