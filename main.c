@@ -1,3 +1,13 @@
+
+/**
+ * @file main.c
+ * @author Linnea Dahl & Sara Back 
+ * @breif Main file for Nbody 
+ * 
+ */ 
+
+
+
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,6 +37,10 @@ typedef struct body {
   prec mass;
 } body;
 
+/**
+ * @breif updates a star 
+ * Updates the acceleration, the force and the position of a star. 
+ */
 
 static void update(body* a, prec dt)
 {
@@ -40,16 +54,24 @@ static void update(body* a, prec dt)
  a->py += a->vy * dt + ((accY * dt * dt)/2);  
 }
 
+/**
+ * @breif resets the force of a star
+ */
 
 static void resetForce(body* b) 
 {
   b->fx = 0.0;
   b->fy = 0.0;
-} 
+}
+
+/**
+ * @breif addForce adds two stars together 
+ * By multiplying the force and delta x and delta y the new force of the star is calculated. 
+ */
 
 static void addForce(body* a, body* b)
 {
-  prec G = 0.00000000006673;
+
   prec delta_x = b->px - a->px;
   prec delta_y = b->py - a->px;
   prec distance = sqrt(( delta_x * delta_x) + (delta_y * delta_y));
@@ -65,7 +87,10 @@ static prec newRand()
   prec r = (prec)((double)rand()/(double)RAND_MAX);
   return r;
 }
-
+/**
+ * @breif initializes the stars
+ * Initializes the velocity, point X, point Y and the mass of the stars by a random function. 
+ */
 
 void init(int N, body* star) //gives all stars their starting values
 { 
@@ -77,6 +102,11 @@ void init(int N, body* star) //gives all stars their starting values
   star[k].mass = newRand() * 500;
   }
 }
+
+/**
+ * @breif updateForces updates the forces of all the stars 
+ */
+
 
 static void updateForces(int N, body* star)
 {
@@ -159,6 +189,7 @@ int main(int argc, char* argv[]) {
       XClearWindow(disp,window);	
 #endif
     }
+  free(star); 
   clock_t stop = clock();
   float diff = (float)(stop - start)/CLOCKS_PER_SEC;
   printf("Total: %lf seconds\n",diff);
