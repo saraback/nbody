@@ -7,3 +7,5 @@ animate:
 	gcc -std=c99 -DANIMATE main.c -o main -lm -lX11
 run:
 	./main
+clean:
+	rm main
