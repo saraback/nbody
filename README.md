@@ -1,7 +1,7 @@
 #Nbody - Sara Back & Linnea Dahl
 ##Building/running the program
 
-The program is run by writing 
+The program is compiled by make starsim or make animate. Just make will default to starsim. Starsim is mostly for debugging purposes. Animate will enable the graphical simulation.
 
 ##Goals
 During this project, we have completed the following goal with use of the code written:
