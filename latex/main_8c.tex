@@ -1,0 +1,119 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+
+
+Main file for Nbody.  
+
+
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbody}{body}
+\begin{DoxyCompactList}\small\item\em All the needed values for a star. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{\#define \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec}~float}\label{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}
+
+\begin{DoxyCompactList}\small\item\em Another name for flaot. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a598a3330b3c21701223ee0ca14316eca}{\#define \hyperlink{main_8c_a598a3330b3c21701223ee0ca14316eca}{P\-I}~3.\-14159265359}\label{main_8c_a598a3330b3c21701223ee0ca14316eca}
+
+\begin{DoxyCompactList}\small\item\em Just an abbreviation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a5abc80fe7adcf51a7ddc28c2548518a3}{typedef struct \hyperlink{structbody}{body} \hyperlink{main_8c_a5abc80fe7adcf51a7ddc28c2548518a3}{body}}\label{main_8c_a5abc80fe7adcf51a7ddc28c2548518a3}
+
+\begin{DoxyCompactList}\small\item\em All the needed values for a star. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}{update} (\hyperlink{structbody}{body} $\ast$a, \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec} dt)
+\begin{DoxyCompactList}\small\item\em updates a star \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_a3c505f52b191ad162e80d25858fdd098}{reset\-Force} (\hyperlink{structbody}{body} $\ast$b)
+\begin{DoxyCompactList}\small\item\em resets the force of a star \end{DoxyCompactList}\item 
+static void \hyperlink{main_8c_ae6e907402026ca4699b0da99978b5be7}{add\-Force} (\hyperlink{structbody}{body} $\ast$a, \hyperlink{structbody}{body} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Add\-Force adds two stars together. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a656b0e6c956991a96f0f8aa88341f618}{static \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec} \hyperlink{main_8c_a656b0e6c956991a96f0f8aa88341f618}{new\-Rand} ()}\label{main_8c_a656b0e6c956991a96f0f8aa88341f618}
+
+\begin{DoxyCompactList}\small\item\em Returns a random number. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{init} (int N, \hyperlink{structbody}{body} $\ast$star)
+\begin{DoxyCompactList}\small\item\em Initializes the stars. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a0225871a22ae8ff450368514791f150e}{static void \hyperlink{main_8c_a0225871a22ae8ff450368514791f150e}{update\-Forces} (int N, \hyperlink{structbody}{body} $\ast$star)}\label{main_8c_a0225871a22ae8ff450368514791f150e}
+
+\begin{DoxyCompactList}\small\item\em update\-Forces updates the forces of all the stars. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{int \hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+\begin{DoxyCompactList}\small\item\em The main function has default values that is used when there is bad input or no input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_a1fbf28d851e0c80a478859ec0c539a5a}{static \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec} {\bfseries gdt} = 0.\-0001}\label{main_8c_a1fbf28d851e0c80a478859ec0c539a5a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main file for Nbody. \begin{DoxyAuthor}{Author}
+Linnea Dahl 
+
+Sara Back
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_ae6e907402026ca4699b0da99978b5be7}{\index{main.\-c@{main.\-c}!add\-Force@{add\-Force}}
+\index{add\-Force@{add\-Force}!main.c@{main.\-c}}
+\subsubsection[{add\-Force}]{\setlength{\rightskip}{0pt plus 5cm}static void add\-Force (
+\begin{DoxyParamCaption}
+\item[{{\bf body} $\ast$}]{a, }
+\item[{{\bf body} $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_ae6e907402026ca4699b0da99978b5be7}
+
+
+Add\-Force adds two stars together. 
+
+By multiplying the force and delta x and delta y the new force of the star is calculated. \hypertarget{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{\index{main.\-c@{main.\-c}!init@{init}}
+\index{init@{init}!main.c@{main.\-c}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void init (
+\begin{DoxyParamCaption}
+\item[{int}]{N, }
+\item[{{\bf body} $\ast$}]{star}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a742dc738c1de5a78d9908bcb9246ad68}
+
+
+Initializes the stars. 
+
+Initializes the velocity, point X, point Y and the mass of the stars by a random function. \hypertarget{main_8c_a3c505f52b191ad162e80d25858fdd098}{\index{main.\-c@{main.\-c}!reset\-Force@{reset\-Force}}
+\index{reset\-Force@{reset\-Force}!main.c@{main.\-c}}
+\subsubsection[{reset\-Force}]{\setlength{\rightskip}{0pt plus 5cm}static void reset\-Force (
+\begin{DoxyParamCaption}
+\item[{{\bf body} $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_a3c505f52b191ad162e80d25858fdd098}
+
+
+resets the force of a star 
+
+Needed to not continously adding all forces \hypertarget{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}{\index{main.\-c@{main.\-c}!update@{update}}
+\index{update@{update}!main.c@{main.\-c}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}static void update (
+\begin{DoxyParamCaption}
+\item[{{\bf body} $\ast$}]{a, }
+\item[{{\bf prec}}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}
+
+
+updates a star 
+
+Updates the acceleration, the force and the position of a star. 

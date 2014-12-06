@@ -1,8 +1,12 @@
 
 /**
  * @file main.c
- * @author Linnea Dahl & Sara Back 
- * @breif Main file for Nbody 
+ * @brief Main file for Nbody 
+ *
+ * @author Linnea Dahl 
+ * @author Sara Back 
+ *  
+ * @bug No known bugs
  * 
  */ 
 
@@ -20,13 +24,22 @@
 #define X_SIZE 800
 #define Y_SIZE 800
 #endif
-
+/**
+ * @brief Another name for flaot
+ */
 #define prec float
+
+/**
+ * @brief Just an abbreviation
+ */
 #define PI 3.14159265359
 
 
 static prec gdt = 0.0001;
 
+/**
+ * @brief All the needed values for a star
+ */
 typedef struct body {
   prec vx;
   prec vy;
@@ -38,10 +51,11 @@ typedef struct body {
 } body;
 
 /**
- * @breif updates a star 
+ * @brief updates a star 
+ *
  * Updates the acceleration, the force and the position of a star. 
+ *  
  */
-
 static void update(body* a, prec dt)
 {
  prec accX = a->fx / a->mass;
@@ -55,9 +69,10 @@ static void update(body* a, prec dt)
 }
 
 /**
- * @breif resets the force of a star
+ * @brief resets the force of a star
+ *
+ * Needed to not continously adding all forces 
  */
-
 static void resetForce(body* b) 
 {
   b->fx = 0.0;
@@ -65,10 +80,10 @@ static void resetForce(body* b)
 }
 
 /**
- * @breif addForce adds two stars together 
+ * @brief AddForce adds two stars together.
+ * 
  * By multiplying the force and delta x and delta y the new force of the star is calculated. 
  */
-
 static void addForce(body* a, body* b)
 {
 
@@ -81,17 +96,23 @@ static void addForce(body* a, body* b)
   a->fy += force * delta_y;
   
 }
-
+/**
+ * @brief Returns a random number
+ *
+ */
 static prec newRand() 
 {//srand(time(0));
   prec r = (prec)((double)rand()/(double)RAND_MAX);
   return r;
 }
+
+
+
 /**
- * @breif initializes the stars
+ * @brief Initializes the stars.
+ *
  * Initializes the velocity, point X, point Y and the mass of the stars by a random function. 
  */
-
 void init(int N, body* star) //gives all stars their starting values
 { 
   for ( int k=0; k<N; k++){
@@ -104,10 +125,8 @@ void init(int N, body* star) //gives all stars their starting values
 }
 
 /**
- * @breif updateForces updates the forces of all the stars 
+ * @brief updateForces updates the forces of all the stars. 
  */
-
-
 static void updateForces(int N, body* star)
 {
   for (int i = 0; i < N; i++) {
@@ -134,6 +153,11 @@ static void copyToXBuffer(body* star, XPoint* points, int N)
   }
 }
 #endif
+
+/**
+ * @brief The main function 
+ */
+
 
 int main(int argc, char* argv[]) {
 
