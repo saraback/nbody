@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <ctype.h>
 
 #ifdef ANIMATE
 #include <X11/Xlib.h>
@@ -168,7 +169,7 @@ int main(int argc, char* argv[]) {
   int N = 200;
   int iter = 1000;
 
-  if(argc == 3)
+  if(argc == 3 && isdigit(atoi[1]) && isdigit(atoi[2]))
     {
       N = atoi(argv[1]);
       iter = atoi(argv[2]);
