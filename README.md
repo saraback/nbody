@@ -8,5 +8,5 @@ During this project, we have completed the following goal with use of the code w
 
 J26, M36, R50, S51, S52, T53, T54, V56, W57, X62, X59
 
-##Possible expansions
-
+##Expansions
+None
