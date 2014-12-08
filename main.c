@@ -70,7 +70,7 @@ static void update(body* a, prec dt)
 
 /**
  * @brief Resets the force of a star
- *
+ * @param b The star to reset it 
  * This is needed to reset the forces between updates, otherwise the force will grow endlessly. 
  */
 static void resetForce(body* b) 
@@ -81,7 +81,8 @@ static void resetForce(body* b)
 
 /**
  * @brief AddForce adds two stars together.
- * 
+ * @param a One of the stars
+ * @param b Another star
  * By multiplying the force and delta x and delta y the new force of the star is calculated. 
  */
 static void addForce(body* a, body* b)
@@ -110,7 +111,8 @@ static prec newRand()
 
 /**
  * @brief Initializes the stars.
- *
+ * @param N Number of stars 
+ * @param star 
  * Initializes the velocity, point X, point Y and the mass of the stars by a random function. 
  */
 void init(int N, body* star) //gives all stars their starting values
@@ -126,6 +128,8 @@ void init(int N, body* star) //gives all stars their starting values
 
 /**
  * @brief updateForces updates the forces of all the stars. 
+ * @param N Number of stars 
+ * @param star
  */
 static void updateForces(int N, body* star)
 {
