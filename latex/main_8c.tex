@@ -3,7 +3,7 @@
 }
 
 
-Main file for Nbody.  
+Main and only file for Nbody.  
 
 
 {\ttfamily \#include $<$math.\-h$>$}\\*
@@ -20,10 +20,10 @@ struct \hyperlink{structbody}{body}
 \item 
 \hypertarget{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{\#define \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec}~float}\label{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}
 
-\begin{DoxyCompactList}\small\item\em Another name for flaot. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Another name for float. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_a598a3330b3c21701223ee0ca14316eca}{\#define \hyperlink{main_8c_a598a3330b3c21701223ee0ca14316eca}{P\-I}~3.\-14159265359}\label{main_8c_a598a3330b3c21701223ee0ca14316eca}
 
-\begin{DoxyCompactList}\small\item\em Just an abbreviation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Just an abbreviation for pi. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,7 +49,7 @@ void \hyperlink{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{init} (int N, \hyperl
 \begin{DoxyCompactList}\small\item\em update\-Forces updates the forces of all the stars. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{int \hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}
 
-\begin{DoxyCompactList}\small\item\em The main function has default values that is used when there is bad input or no input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,7 +59,7 @@ void \hyperlink{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{init} (int N, \hyperl
 
 
 \subsection{Detailed Description}
-Main file for Nbody. \begin{DoxyAuthor}{Author}
+Main and only file for Nbody. \begin{DoxyAuthor}{Author}
 Linnea Dahl 
 
 Sara Back
@@ -117,3 +117,9 @@ Needed to not continously adding all forces \hypertarget{main_8c_afc1da57b3f4ebf
 updates a star 
 
 Updates the acceleration, the force and the position of a star. 
+\begin{DoxyParams}{Parameters}
+{\em a} & The star to have its position, speed and force updated. \\
+\hline
+{\em dt} & The time to be calculated with \\
+\hline
+\end{DoxyParams}

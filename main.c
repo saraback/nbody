@@ -1,7 +1,7 @@
 
 /**
  * @file main.c
- * @brief Main file for Nbody 
+ * @brief Main and only file for Nbody 
  *
  * @author Linnea Dahl 
  * @author Sara Back 
@@ -25,12 +25,12 @@
 #define Y_SIZE 800
 #endif
 /**
- * @brief Another name for flaot
+ * @brief Another name for float
  */
 #define prec float
 
 /**
- * @brief Just an abbreviation
+ * @brief Just an abbreviation for pi
  */
 #define PI 3.14159265359
 
@@ -39,6 +39,7 @@ static prec gdt = 0.0001;
 
 /**
  * @brief All the needed values for a star
+ *
  */
 typedef struct body {
   prec vx;
@@ -51,10 +52,9 @@ typedef struct body {
 } body;
 
 /**
- * @brief updates a star 
- *
- * Updates the acceleration, the force and the position of a star. 
- *  
+ * @brief Updates the acceleration, the force and the position of a star. 
+ * @param a The star to have its position, speed and force updated.
+ * @param dt The time to be calculated with  
  */
 static void update(body* a, prec dt)
 {
@@ -69,9 +69,9 @@ static void update(body* a, prec dt)
 }
 
 /**
- * @brief resets the force of a star
+ * @brief Resets the force of a star
  *
- * Needed to not continously adding all forces 
+ * This is needed to reset the forces between updates, otherwise the force will grow endlessly. 
  */
 static void resetForce(body* b) 
 {

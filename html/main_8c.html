@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Main file for Nbody.  
+<p>Main and only file for Nbody.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
@@ -108,11 +108,11 @@ Classes</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a4c01dcca324ecd28bf0f7dbd30b6c007"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c01dcca324ecd28bf0f7dbd30b6c007"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4c01dcca324ecd28bf0f7dbd30b6c007">prec</a>&#160;&#160;&#160;float</td></tr>
-<tr class="memdesc:a4c01dcca324ecd28bf0f7dbd30b6c007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another name for flaot. <br/></td></tr>
+<tr class="memdesc:a4c01dcca324ecd28bf0f7dbd30b6c007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another name for float. <br/></td></tr>
 <tr class="separator:a4c01dcca324ecd28bf0f7dbd30b6c007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a598a3330b3c21701223ee0ca14316eca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a598a3330b3c21701223ee0ca14316eca"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a598a3330b3c21701223ee0ca14316eca">PI</a>&#160;&#160;&#160;3.14159265359</td></tr>
-<tr class="memdesc:a598a3330b3c21701223ee0ca14316eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just an abbreviation. <br/></td></tr>
+<tr class="memdesc:a598a3330b3c21701223ee0ca14316eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just an abbreviation for pi. <br/></td></tr>
 <tr class="separator:a598a3330b3c21701223ee0ca14316eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -146,7 +146,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:a0225871a22ae8ff450368514791f150e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
-<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main function has default values that is used when there is bad input or no input. <br/></td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main function. <br/></td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -156,7 +156,7 @@ static <a class="el" href="main_8c.html#a4c01dcca324ecd28bf0f7dbd30b6c007">prec<
 <tr class="separator:a1fbf28d851e0c80a478859ec0c539a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main file for Nbody. </p>
+<div class="textblock"><p>Main and only file for Nbody. </p>
 <dl class="section author"><dt>Author</dt><dd>Linnea Dahl </dd>
 <dd>
 Sara Back</dd></dl>
@@ -289,13 +289,20 @@ Sara Back</dd></dl>
 
 <p>updates a star </p>
 <p>Updates the acceleration, the force and the position of a star. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The star to have its position, speed and force updated. </td></tr>
+    <tr><td class="paramname">dt</td><td>The time to be calculated with </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 6 2014 20:37:37 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 8 2014 12:51:57 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
