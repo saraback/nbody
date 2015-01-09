@@ -10,6 +10,7 @@ Main and only file for Nbody.
 {\ttfamily \#include $<$stdlib.\-h$>$}\\*
 {\ttfamily \#include $<$stdio.\-h$>$}\\*
 {\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,9 +35,9 @@ struct \hyperlink{structbody}{body}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}{update} (\hyperlink{structbody}{body} $\ast$a, \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec} dt)
-\begin{DoxyCompactList}\small\item\em updates a star \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates the acceleration, the force and the position of a star. \end{DoxyCompactList}\item 
 static void \hyperlink{main_8c_a3c505f52b191ad162e80d25858fdd098}{reset\-Force} (\hyperlink{structbody}{body} $\ast$b)
-\begin{DoxyCompactList}\small\item\em resets the force of a star \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Resets the force of a star. \end{DoxyCompactList}\item 
 static void \hyperlink{main_8c_ae6e907402026ca4699b0da99978b5be7}{add\-Force} (\hyperlink{structbody}{body} $\ast$a, \hyperlink{structbody}{body} $\ast$b)
 \begin{DoxyCompactList}\small\item\em Add\-Force adds two stars together. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_a656b0e6c956991a96f0f8aa88341f618}{static \hyperlink{main_8c_a4c01dcca324ecd28bf0f7dbd30b6c007}{prec} \hyperlink{main_8c_a656b0e6c956991a96f0f8aa88341f618}{new\-Rand} ()}\label{main_8c_a656b0e6c956991a96f0f8aa88341f618}
@@ -44,8 +45,7 @@ static void \hyperlink{main_8c_ae6e907402026ca4699b0da99978b5be7}{add\-Force} (\
 \begin{DoxyCompactList}\small\item\em Returns a random number. \end{DoxyCompactList}\item 
 void \hyperlink{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{init} (int N, \hyperlink{structbody}{body} $\ast$star)
 \begin{DoxyCompactList}\small\item\em Initializes the stars. \end{DoxyCompactList}\item 
-\hypertarget{main_8c_a0225871a22ae8ff450368514791f150e}{static void \hyperlink{main_8c_a0225871a22ae8ff450368514791f150e}{update\-Forces} (int N, \hyperlink{structbody}{body} $\ast$star)}\label{main_8c_a0225871a22ae8ff450368514791f150e}
-
+static void \hyperlink{main_8c_a0225871a22ae8ff450368514791f150e}{update\-Forces} (int N, \hyperlink{structbody}{body} $\ast$star)
 \begin{DoxyCompactList}\small\item\em update\-Forces updates the forces of all the stars. \end{DoxyCompactList}\item 
 \hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{int \hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}
 
@@ -81,7 +81,14 @@ Sara Back
 
 Add\-Force adds two stars together. 
 
-By multiplying the force and delta x and delta y the new force of the star is calculated. \hypertarget{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{\index{main.\-c@{main.\-c}!init@{init}}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & One of the stars \\
+\hline
+{\em b} & Another star By multiplying the force and delta x and delta y the new force of the star is calculated. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a742dc738c1de5a78d9908bcb9246ad68}{\index{main.\-c@{main.\-c}!init@{init}}
 \index{init@{init}!main.c@{main.\-c}}
 \subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void init (
 \begin{DoxyParamCaption}
@@ -93,7 +100,14 @@ By multiplying the force and delta x and delta y the new force of the star is ca
 
 Initializes the stars. 
 
-Initializes the velocity, point X, point Y and the mass of the stars by a random function. \hypertarget{main_8c_a3c505f52b191ad162e80d25858fdd098}{\index{main.\-c@{main.\-c}!reset\-Force@{reset\-Force}}
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of stars \\
+\hline
+{\em star} & Initializes the velocity, point X, point Y and the mass of the stars by a random function. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a3c505f52b191ad162e80d25858fdd098}{\index{main.\-c@{main.\-c}!reset\-Force@{reset\-Force}}
 \index{reset\-Force@{reset\-Force}!main.c@{main.\-c}}
 \subsubsection[{reset\-Force}]{\setlength{\rightskip}{0pt plus 5cm}static void reset\-Force (
 \begin{DoxyParamCaption}
@@ -102,9 +116,14 @@ Initializes the velocity, point X, point Y and the mass of the stars by a random
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_a3c505f52b191ad162e80d25858fdd098}
 
 
-resets the force of a star 
+Resets the force of a star. 
 
-Needed to not continously adding all forces \hypertarget{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}{\index{main.\-c@{main.\-c}!update@{update}}
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The star to reset it This is needed to reset the forces between updates, otherwise the force will grow endlessly. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}{\index{main.\-c@{main.\-c}!update@{update}}
 \index{update@{update}!main.c@{main.\-c}}
 \subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}static void update (
 \begin{DoxyParamCaption}
@@ -114,12 +133,31 @@ Needed to not continously adding all forces \hypertarget{main_8c_afc1da57b3f4ebf
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_afc1da57b3f4ebfb1c6f700fe25845bc2}
 
 
-updates a star 
-
 Updates the acceleration, the force and the position of a star. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em a} & The star to have its position, speed and force updated. \\
 \hline
 {\em dt} & The time to be calculated with \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a0225871a22ae8ff450368514791f150e}{\index{main.\-c@{main.\-c}!update\-Forces@{update\-Forces}}
+\index{update\-Forces@{update\-Forces}!main.c@{main.\-c}}
+\subsubsection[{update\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}static void update\-Forces (
+\begin{DoxyParamCaption}
+\item[{int}]{N, }
+\item[{{\bf body} $\ast$}]{star}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{main_8c_a0225871a22ae8ff450368514791f150e}
+
+
+update\-Forces updates the forces of all the stars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of stars \\
+\hline
+{\em star} & \\
 \hline
 \end{DoxyParams}

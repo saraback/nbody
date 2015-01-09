@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <assert.h>
 
 #include "logic.h"
 
@@ -53,10 +54,10 @@ int main(int argc, char* argv[]) {
   
   struct body* star = malloc(sizeof(body) * N);
 
-   init( N, star);
-  
+  assert(star != NULL);
 
-  
+   init( N, star);
+   
 
 #ifdef ANIMATE
   XPoint* points = malloc(sizeof(XPoint)*N);

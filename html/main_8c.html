@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;time.h&gt;</code><br/>
+<code>#include &lt;ctype.h&gt;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -125,10 +126,10 @@ typedef struct <a class="el" href="structbody.html">body</a>&#160;</td><td class
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afc1da57b3f4ebfb1c6f700fe25845bc2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afc1da57b3f4ebfb1c6f700fe25845bc2">update</a> (<a class="el" href="structbody.html">body</a> *a, <a class="el" href="main_8c.html#a4c01dcca324ecd28bf0f7dbd30b6c007">prec</a> dt)</td></tr>
-<tr class="memdesc:afc1da57b3f4ebfb1c6f700fe25845bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">updates a star  <a href="#afc1da57b3f4ebfb1c6f700fe25845bc2">More...</a><br/></td></tr>
+<tr class="memdesc:afc1da57b3f4ebfb1c6f700fe25845bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the acceleration, the force and the position of a star.  <a href="#afc1da57b3f4ebfb1c6f700fe25845bc2">More...</a><br/></td></tr>
 <tr class="separator:afc1da57b3f4ebfb1c6f700fe25845bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c505f52b191ad162e80d25858fdd098"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3c505f52b191ad162e80d25858fdd098">resetForce</a> (<a class="el" href="structbody.html">body</a> *b)</td></tr>
-<tr class="memdesc:a3c505f52b191ad162e80d25858fdd098"><td class="mdescLeft">&#160;</td><td class="mdescRight">resets the force of a star  <a href="#a3c505f52b191ad162e80d25858fdd098">More...</a><br/></td></tr>
+<tr class="memdesc:a3c505f52b191ad162e80d25858fdd098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the force of a star.  <a href="#a3c505f52b191ad162e80d25858fdd098">More...</a><br/></td></tr>
 <tr class="separator:a3c505f52b191ad162e80d25858fdd098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e907402026ca4699b0da99978b5be7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae6e907402026ca4699b0da99978b5be7">addForce</a> (<a class="el" href="structbody.html">body</a> *a, <a class="el" href="structbody.html">body</a> *b)</td></tr>
 <tr class="memdesc:ae6e907402026ca4699b0da99978b5be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">AddForce adds two stars together.  <a href="#ae6e907402026ca4699b0da99978b5be7">More...</a><br/></td></tr>
@@ -140,9 +141,8 @@ static <a class="el" href="main_8c.html#a4c01dcca324ecd28bf0f7dbd30b6c007">prec<
 <tr class="memitem:a742dc738c1de5a78d9908bcb9246ad68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a742dc738c1de5a78d9908bcb9246ad68">init</a> (int N, <a class="el" href="structbody.html">body</a> *star)</td></tr>
 <tr class="memdesc:a742dc738c1de5a78d9908bcb9246ad68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the stars.  <a href="#a742dc738c1de5a78d9908bcb9246ad68">More...</a><br/></td></tr>
 <tr class="separator:a742dc738c1de5a78d9908bcb9246ad68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0225871a22ae8ff450368514791f150e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0225871a22ae8ff450368514791f150e"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0225871a22ae8ff450368514791f150e">updateForces</a> (int N, <a class="el" href="structbody.html">body</a> *star)</td></tr>
-<tr class="memdesc:a0225871a22ae8ff450368514791f150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateForces updates the forces of all the stars. <br/></td></tr>
+<tr class="memitem:a0225871a22ae8ff450368514791f150e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0225871a22ae8ff450368514791f150e">updateForces</a> (int N, <a class="el" href="structbody.html">body</a> *star)</td></tr>
+<tr class="memdesc:a0225871a22ae8ff450368514791f150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateForces updates the forces of all the stars.  <a href="#a0225871a22ae8ff450368514791f150e">More...</a><br/></td></tr>
 <tr class="separator:a0225871a22ae8ff450368514791f150e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
@@ -195,7 +195,13 @@ Sara Back</dd></dl>
 </div><div class="memdoc">
 
 <p>AddForce adds two stars together. </p>
-<p>By multiplying the force and delta x and delta y the new force of the star is calculated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>One of the stars </td></tr>
+    <tr><td class="paramname">b</td><td>Another star By multiplying the force and delta x and delta y the new force of the star is calculated. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -224,7 +230,13 @@ Sara Back</dd></dl>
 </div><div class="memdoc">
 
 <p>Initializes the stars. </p>
-<p>Initializes the velocity, point X, point Y and the mass of the stars by a random function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Number of stars </td></tr>
+    <tr><td class="paramname">star</td><td>Initializes the velocity, point X, point Y and the mass of the stars by a random function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -250,8 +262,13 @@ Sara Back</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>resets the force of a star </p>
-<p>Needed to not continously adding all forces </p>
+<p>Resets the force of a star. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>The star to reset it This is needed to reset the forces between updates, otherwise the force will grow endlessly. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -287,7 +304,6 @@ Sara Back</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>updates a star </p>
 <p>Updates the acceleration, the force and the position of a star. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -299,10 +315,53 @@ Sara Back</dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="a0225871a22ae8ff450368514791f150e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void updateForces </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structbody.html">body</a> *&#160;</td>
+          <td class="paramname"><em>star</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>updateForces updates the forces of all the stars. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Number of stars </td></tr>
+    <tr><td class="paramname">star</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2014 12:51:57 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 8 2014 14:22:33 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,16 +1,25 @@
 # Make animate to show a nice window
 # Make starsim to only benchmark
+C_OPTIONS = gcc -std=c99
 
+FILES = *.c
 
 starsim: logic.o main.o
-	gcc -std=c99 logic.o main.o -o main -lm 
+	$(C_OPTIONS) logic.o main.o -o main -lm 
 animate: logic.o main.o  
-	gcc -std=c99 -DANIMATE logic.c main.c -o main -lm -lX11
+	$(C_OPTIONS) -DANIMATE logic.c main.c -o main -lm -lX11
+all: $(FILES)
+	$(C_OPTIONS) -c $(FILES) 
+
 main.o: main.c
-	gcc -std=c99 -c main.c -lm
+	$(C_OPTIONS) -c main.c -lm
 logic.o: logic.c
-	gcc -std=c99 -c logic.c -lm
+	$(C_OPTIONS) -c logic.c -lm
 run:
 	./main
+
+test: logic.o
+	$(C_OPTIONS) logic.c test.c -o unittest -lm -lcunit
+
 clean:
-	rm main *.o
+	rm main unittests *.o

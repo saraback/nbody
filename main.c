@@ -91,7 +91,7 @@ static void addForce(body* a, body* b)
 
   prec delta_x = b->px - a->px;
   prec delta_y = b->py - a->px;
-  prec distance = sqrt(( delta_x * delta_x) + (delta_y * delta_y));
+  prec distance = (( delta_x * delta_x) + (delta_y * delta_y));
   prec force = (a->mass * b->mass)/ (distance * distance);
 
   a->fx += force * delta_x;
@@ -169,7 +169,7 @@ int main(int argc, char* argv[]) {
   int N = 200;
   int iter = 1000;
 
-  if(argc == 3 && isdigit(atoi[1]) && isdigit(atoi[2]))
+  if(argc == 3 && isdigit(atoi(argv[1])) && isdigit(atoi(argv[2])))
     {
       N = atoi(argv[1]);
       iter = atoi(argv[2]);
