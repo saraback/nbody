@@ -1,0 +1,83 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+/**
+ * @brief Another name for float
+ */
+
+#define prec float
+
+
+/**
+ * @brief Just an abbreviation for pi
+ */
+
+#define PI 3.14159265359
+
+
+/**
+ * @brief All the needed values for a star
+ *
+ */
+
+typedef struct body{
+  prec vx;
+  prec vy;
+  prec fx;
+  prec fy;
+  prec px;
+  prec py;
+  prec mass;
+} body;
+
+/**
+ * @brief Updates the acceleration, the force and the position of a star. 
+ * @param a The star to have its position, speed and force updated.
+ * @param dt The time to be calculated with  
+ */
+
+void update(body* a, prec dt);
+
+/**
+ * @brief Resets the force of a star
+ * @param b The star to reset it 
+ * This is needed to reset the forces between updates, otherwise the force will grow endlessly. 
+ */
+
+void resetForce(body* b);
+
+/**
+ * @brief AddForce adds two stars together.
+ * @param a One of the stars
+ * @param b Another star
+ * By multiplying the force and delta x and delta y the new force of the star is calculated. 
+ */
+
+void addForce(body* a, body* b);
+
+/**
+ * @brief Returns a random number
+ *
+ */
+
+prec newRand();
+
+/**
+ * @brief Initializes the stars.
+ * @param N Number of stars 
+ * @param star 
+ * Initializes the velocity, point X, point Y and the mass of the stars by a random function. 
+ */
+
+void init(int N, body* star);
+
+/**
+ * @brief updateForces updates the forces of all the stars. 
+ * @param N Number of stars 
+ * @param star
+ */
+
+void updateForces(int N, body* star);
+
+
+#endif
